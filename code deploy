@@ -4,6 +4,7 @@ node{
    }
 stage{'code deploy'}{
 sshagent(['deployment']) {
-    sh 'scp -o StrictHostKeyChecking=no target/* .war ec2-user@54.84.155.54:/var/www/vhosts/'
+    sh 'scp -o StrictHostKeyChecking=no target/* ec2-user@54.84.155.54:/var/www/vhosts/'
+}
 }
 }
