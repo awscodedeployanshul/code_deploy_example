@@ -1,7 +1,9 @@
 node{
    stage{'SCM Checkout'}{
-   git '
-
+   git ' https://github.com/awscodedeployanshul/code_deploy_example/tree/master'
+   }
+stage{'code deploy'}{
 sshagent(['deployment']) {
     sh 'scp -o StrictHostKeyChecking=no target/* .war ec2-user@54.84.155.54:/var/www/vhosts/'
+}
 }
